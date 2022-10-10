@@ -1,17 +1,14 @@
-CS236:
-    - name: Assignment 1
-      due-date: 2022-10-05
-      complete: false
-    
-    - name: Assignment 2
-      due-date: 2022-10-06
-      complete: false
-    
 CS224:
-    - name: Assignment 3
-      due-date: 2022-10-05
-      complete: true
-     
-    - name: Assignment 4
-      due-date: 2022-10-07
-      complete: false
+- due-date: 2022-10-05
+  complete: true
+  name: Assignment 3
+- due-date: 2022-10-07
+  complete: false
+  name: Assignment 4
+CS236:
+- due-date: 2022-10-05
+  complete: false
+  name: Assignment 1
+- due-date: 2022-10-06
+  complete: false
+  name: Assignment 2
