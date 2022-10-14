@@ -1,5 +1,4 @@
 #lang racket/base
-(require yaml)
 (require "store.rkt")
 
 (load-from-yaml)
