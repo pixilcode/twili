@@ -5,7 +5,7 @@
 (module+ test
   (require rackunit))
 
-;; convert a function to only contain alphanumerics and dashes
+; convert a function to only contain alphanumerics and dashes
 (define (normalize string)
   (string-trim
    (string-replace
@@ -13,7 +13,7 @@
     #rx"[^a-z0-9]+" ; 2. replace any non-alphanumeric numbers...
     "-") ; ...with a dash
    #rx"-+")) ; 3. remove any leading/trailing dashes
-(provide normalize)
+(provide (contract-out [normalize (-> string string)]))
 (module+ test
   (check-equal? (normalize "abc") "abc"
                 "no special characters")
@@ -21,6 +21,6 @@
                 "to lower case")
   (check-equal? (normalize "abc|d") "abc-d"
                 "remove special characters")
-  (check-equal? (normalize "abc def !") "abc-def-"
-                "remove trailing dashes"))
+  (check-equal? (normalize "! abc def !") "abc-def"
+                "remove leading/trailing dashes"))
 
