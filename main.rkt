@@ -1,6 +1,21 @@
 #lang racket/base
-(require "store.rkt")
+(require racket/cmdline)
+(require (prefix-in ui: "ui.rkt"))
+(require (prefix-in store: "store.rkt"))
 
-(load-from-yaml)
-(save-to-yaml (load-from-yaml))
-; run this
+(define action
+  (command-line
+    #:program "twili"
+
+    #:args (action)
+
+    action))
+
+(define tasks (store:load-from-yaml "test.yaml"))
+tasks
+
+#|
+(case action
+  [("list") (ui:list-all tasks)])
+|#
+
